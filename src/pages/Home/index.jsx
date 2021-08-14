@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from '@gympass/yoga';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import { Section, Content, Title } from './style';
 import Header from '../../components/Header';
 import Table from '../../components/Table';
@@ -9,8 +9,13 @@ import api from '../../services/api';
 const home = () => {
   const { page } = useParams();
   const [users, setUsers] = useState([]);
+  const history = useHistory();
 
   const loadUsers = async () => {
+    if (Number.isNaN(Number(page))) {
+      history.push('/404');
+    }
+
     try {
       const response = await api.get('', {
         params: {
@@ -30,7 +35,6 @@ const home = () => {
 
   return (
     <>
-      {console.log(users)}
       <Header />
       <Section>
         <Container>
@@ -38,7 +42,7 @@ const home = () => {
             <Col xxs={12}>
               <Content>
                 <Title>&#128269; Search patient &#128270;</Title>
-                <Table users={users} heads={['Name', 'Gender', 'Birth']} />
+                <Table users={users} />
                 <Link
                   to={Number(page) > 1 ? `/page=${page - 1}` : `/page=${page}`}
                   disabled
