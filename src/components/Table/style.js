@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { media } from '@gympass/yoga-helpers';
-import { Button } from '@gympass/yoga';
+import { Button, theme } from '@gympass/yoga';
 import colors from '../../tokens/colors';
 
 export const Content = styled.table`
@@ -9,14 +9,14 @@ export const Content = styled.table`
     background-color: ${colors.primary};
 
     th {
-      padding: 10px;
+      padding: ${theme.spacing.xxsmall}px;
       border: none;
     }
   }
 
   tr {
     td {
-      padding: 8px;
+      padding: ${theme.spacing.xxsmall}px;
     }
   }
 
@@ -28,6 +28,18 @@ export const Content = styled.table`
 
   ${media.lg`
     width: 80%;
+
+    #name {
+      width: 420px;
+    }
+
+    #gender {
+      width: 156px;
+    }
+
+    #birth {
+      width: 256px;
+    }
 
     #actions {
       width: 60px;

@@ -2,13 +2,13 @@ import React from 'react';
 import { Search } from '@gympass/yoga-icons';
 import { Content, ButtonMore } from './style';
 
-const Table = ({ users, heads }) => (
+const Table = ({ users }) => (
   <>
     <Content>
       <thead>
-        {heads.map((item) => (
-          <th>{item}</th>
-        ))}
+        <th>Name</th>
+        <th id="gender">Gender</th>
+        <th id="birth">Birth</th>
         <th id="actions">Actions</th>
       </thead>
       <tbody>
