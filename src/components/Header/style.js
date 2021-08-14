@@ -17,9 +17,9 @@ export const Content = styled.div`
 export const Logo = styled.img`
   width: 160px;
 
-  ${media.lg} {
+  ${media.lg`
     width: 150px;
-  }
+  `}
 `;
 
 export const ImageContent = styled.div`
