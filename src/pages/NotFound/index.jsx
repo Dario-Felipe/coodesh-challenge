@@ -9,10 +9,10 @@ const NotFount = () => (
     <Header />
     <Section>
       <Content>
-        <Text>404 - Página não encontrada &#128531;</Text>
+        <Text>404 - Page is not found &#128531;</Text>
         <BackLink to="/">
-          <ChevronLeft stroke={colors.secondary} width={30} height={30} />{' '}
-          Voltar para home
+          <ChevronLeft stroke={colors.secondary} width={30} height={30} /> Come
+          back to Homepage
         </BackLink>
       </Content>
     </Section>
