@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from '@gympass/yoga';
 import { Link, useParams } from 'react-router-dom';
+import { Section, Content, Title } from './style';
 import Header from '../../components/Header';
+import Table from '../../components/Table';
 import api from '../../services/api';
 
 const home = () => {
@@ -30,27 +32,25 @@ const home = () => {
     <>
       {console.log(users)}
       <Header />
-      <Container>
-        <Row>
-          <Col xxs={12}>
-            <h1>Página: {page}</h1>
-
-            <ul>
-              {users.map((item) => (
-                <li key={item.email}>{item.name.first}</li>
-              ))}
-            </ul>
-
-            <Link
-              to={Number(page) > 1 ? `/page=${page - 1}` : `/page=${page}`}
-              disabled
-            >
-              Anterior
-            </Link>
-            <Link to={`/page=${Number(page) + 1}`}>Proxima</Link>
-          </Col>
-        </Row>
-      </Container>
+      <Section>
+        <Container>
+          <Row>
+            <Col xxs={12}>
+              <Content>
+                <Title>&#128269; Search patient &#128270;</Title>
+                <Table users={users} heads={['Name', 'Gender', 'Birth']} />
+                <Link
+                  to={Number(page) > 1 ? `/page=${page - 1}` : `/page=${page}`}
+                  disabled
+                >
+                  Anterior
+                </Link>
+                <Link to={`/page=${Number(page) + 1}`}>Proxima</Link>
+              </Content>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
     </>
   );
 };
