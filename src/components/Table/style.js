@@ -8,22 +8,26 @@ export const Content = styled.table`
     color: ${colors.white};
     background-color: ${colors.primary};
 
-    th {
-      padding: ${theme.spacing.xxsmall}px;
-      border: none;
+    tr {
+      th {
+        padding: ${theme.spacing.xxsmall}px;
+        border: none;
+      }
     }
   }
 
-  tr {
-    td {
-      padding: ${theme.spacing.xxsmall}px;
+  tbody {
+    tr {
+      td {
+        padding: ${theme.spacing.xxsmall}px;
+      }
     }
-  }
 
-  tr td {
-    background: ${colors.white};
-    color: ${colors.dark};
-    text-align: center;
+    tr td {
+      background: ${colors.white};
+      color: ${colors.dark};
+      text-align: center;
+    }
   }
 
   ${media.lg`
