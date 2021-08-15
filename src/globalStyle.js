@@ -1,9 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'styled-normalize';
 import colors from './tokens/colors';
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize}
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
 
   body {
     scroll-behavior: smooth;
