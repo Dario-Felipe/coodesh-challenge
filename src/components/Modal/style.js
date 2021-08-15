@@ -26,16 +26,24 @@ export const Content = styled.div`
   padding: ${theme.spacing.medium}px;
 
   h1 {
-    margin: ${theme.spacing.zero};
+    margin: ${theme.spacing.small}px;
   }
 
   ${media.xxs`
     height: 400px;
     width: 80%;
+
+    h1 {
+      font-size: ${theme.fontSizes.xlarge}px;
+    }
   `}
 
   ${media.xs`
     height: 478px;
+
+    h1 {
+      font-size: ${theme.fontSizes.xxlarge}px;
+    }
   `}
 
   ${media.sm`
