@@ -4,6 +4,8 @@ import { Button, theme } from '@gympass/yoga';
 import colors from '../../tokens/colors';
 
 export const Content = styled.table`
+  width: 100%;
+
   thead {
     color: ${colors.white};
     background-color: ${colors.primary};
@@ -31,7 +33,7 @@ export const Content = styled.table`
   }
 
   ${media.lg`
-    width: 80%;
+    width: 100%;
 
     #name {
       width: 420px;
