@@ -18,10 +18,29 @@ export const Content = styled.div`
 
 export const Title = styled.h2`
   color: ${colors.dark};
-  font-size: ${theme.fontSizes.xxlarge}px;
+
+  ${media.xxs`
+    font-size: ${theme.spacing.large}px;
+  `}
+
+  ${media.xs`
+    font-size: ${theme.fontSizes.xlarge}px;
+  `}
 
   ${media.lg`
     font-size: ${theme.fontSizes.xxxlarge}px;
+  `}
+`;
+
+export const TableContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  ${media.md`
+    width: 80%;
   `}
 `;
 
@@ -29,7 +48,7 @@ export const PageControl = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${theme.spacing.medium}px;
+  gap: ${theme.spacing.xxlarge}px;
   width: 100%;
   padding: ${theme.spacing.medium}px;
 `;
