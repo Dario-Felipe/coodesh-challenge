@@ -18,6 +18,7 @@ export const Content = styled.div`
 
 export const Title = styled.h2`
   color: ${colors.dark};
+  margin: ${theme.spacing.xlarge}px 0;
 
   ${media.xxs`
     font-size: ${theme.spacing.large}px;

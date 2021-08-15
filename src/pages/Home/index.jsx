@@ -16,7 +16,7 @@ import Table from '../../components/Table';
 import api from '../../services/api';
 import { ReactComponent as Loading } from '../../assets/images/loading.svg';
 
-const home = () => {
+const Home = () => {
   const { page } = useParams();
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -95,4 +95,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
