@@ -9,7 +9,7 @@ const Modal = ({ user, handle }) => (
       <List>
         <li>
           <strong>ID: </strong>
-          {user.id.name ? `${user.id.name}${user.id.value}` : 'Empety'}
+          {user.id.name ? `${user.id.name}${user.id.value}` : 'Empty'}
         </li>
         <li>
           <strong>Name: </strong>
