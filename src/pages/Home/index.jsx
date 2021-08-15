@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from '@gympass/yoga';
-import { Link, useParams, useHistory } from 'react-router-dom';
-import { Section, Content, Title } from './style';
+import { ChevronLeft, ChevronRight } from '@gympass/yoga-icons';
+import { useParams, useHistory } from 'react-router-dom';
+import { Section, Content, Title, PageControl, LinkPage } from './style';
+import colors from '../../tokens/colors';
 import Header from '../../components/Header';
 import Table from '../../components/Table';
 import api from '../../services/api';
@@ -43,13 +45,23 @@ const home = () => {
               <Content>
                 <Title>&#128269; Search patient &#128270;</Title>
                 <Table users={users} />
-                <Link
-                  to={Number(page) > 1 ? `/page=${page - 1}` : `/page=${page}`}
-                  disabled
-                >
-                  Anterior
-                </Link>
-                <Link to={`/page=${Number(page) + 1}`}>Proxima</Link>
+                <PageControl>
+                  <LinkPage
+                    to={
+                      Number(page) > 1 ? `/page=${page - 1}` : `/page=${page}`
+                    }
+                  >
+                    <ChevronLeft stroke={colors.white} width={30} height={30} />
+                  </LinkPage>
+                  <span>{page}</span>
+                  <LinkPage to={`/page=${Number(page) + 1}`}>
+                    <ChevronRight
+                      stroke={colors.white}
+                      width={30}
+                      height={30}
+                    />
+                  </LinkPage>
+                </PageControl>
               </Content>
             </Col>
           </Row>
