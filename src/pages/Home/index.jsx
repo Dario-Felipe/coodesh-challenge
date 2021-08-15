@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from '@gympass/yoga';
-import { ChevronLeft, ChevronRight } from '@gympass/yoga-icons';
+import { Container, Row, Col, Box } from '@gympass/yoga';
 import { useParams, useHistory } from 'react-router-dom';
-import {
-  Section,
-  Content,
-  Title,
-  PageControl,
-  LinkPage,
-  TableContainer,
-} from './style';
-import colors from '../../tokens/colors';
+import { Section, Content, Title, TableContainer } from './style';
 import Header from '../../components/Header';
 import Table from '../../components/Table';
+import PageControl from '../../components/PageControl';
 import api from '../../services/api';
 import { ReactComponent as Loading } from '../../assets/images/loading.svg';
 
@@ -61,29 +53,9 @@ const Home = () => {
                 ) : (
                   <TableContainer>
                     <Table users={users} />
-                    <PageControl>
-                      <LinkPage
-                        to={
-                          Number(page) > 1
-                            ? `/page=${page - 1}`
-                            : `/page=${page}`
-                        }
-                      >
-                        <ChevronLeft
-                          stroke={colors.white}
-                          width={30}
-                          height={30}
-                        />
-                      </LinkPage>
-                      <span>{page}</span>
-                      <LinkPage to={`/page=${Number(page) + 1}`}>
-                        <ChevronRight
-                          stroke={colors.white}
-                          width={30}
-                          height={30}
-                        />
-                      </LinkPage>
-                    </PageControl>
+                    <Box padding="medium">
+                      <PageControl page={page} />
+                    </Box>
                   </TableContainer>
                 )}
               </Content>
