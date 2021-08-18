@@ -1,7 +1,11 @@
 # Welcome to my Pharma inc by Coodesh Challenge
 
 This project was built with TypeScript for studies in itself.
-I'm so glad for made it. Let's get started? Steps to run this app bellow:
+
+You can search patients by name, gender and nationality in this app by just typing keywords in the search input and seeing information about them.
+
+I'm so glad for made it. 🚀😊
+Let's get started? Steps to run this app bellow:
 
 ## Contents
 * ReactJS
