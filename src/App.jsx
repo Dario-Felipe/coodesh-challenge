@@ -1,18 +1,12 @@
 import React from 'react';
-import { Container, Col, Row } from '@gympass/yoga';
+import Routes from './routes';
 
-function App() {
+function Home() {
   return (
     <>
-      <Container>
-        <Row>
-          <Col xxs={12}>
-            <h1>Hey Coodesh!</h1>
-          </Col>
-        </Row>
-      </Container>
+      <Routes />
     </>
   );
 }
 
-export default App;
+export default Home;
